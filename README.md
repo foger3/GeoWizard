@@ -1,1 +1,13 @@
-# GeoWizard
+# GeoWizard: Classifying Satellite Images using Convolutional Neural Networks
+
+[![Python 3+7 ready](https://img.shields.io/badge/python-3.8%2B-yellowgreen.svg)](https://www.python.org/)
+
+## Disclaimer
+This notebook is meant to be used by anyone interested in replicating our model or playing around with the satellite predictions. In order to conveniently access the code, models, and any additional files, please visit this [Google Colab](https://drive.google.com/drive/folders/16Ypuxfolx_UYtRBBE6gU1wixhG6tR_lm) notebook. It is recommended running the code on the Colab document as file and data access is easier.
+
+## General Idea and Larger Context
+The aim of this project is to train a neural network on recognizing different landscapes and objects associated with them by classifying satellite images. Nowadays, various localization tasks such as urban planning or land utilization for underdeveloped regions are highly relevant and depend on the evaluation of large areas. Advanced land and object detection techniques using satellite images offer a quick and convenient tool for experts in those fields and enable them to execute their responsibilities more efficiently (Albert et al., 2017). To assist in this effort, the present project utilizes a convolutional neural network (CNN) architecture (Kadhim & Abed, 2019). As CNNs have been proven to be particularly useful for image processing and classification, the general framework of this project will revolve around building a custom classifier, however, involving pre-trained weight matrices. Considering the data source being satellite images, we were interested in applying different augmentation techniques to explore what image distortions make sense. In this context, we want to investigate a custom data augmentation method manipulating the RGB layers of images individually. Here, we are interested in comparing this model to a baseline model only utilizing recommended augmentations. Additionally, to create a generalizable model, we performed robustness analyses and tested the model on a function accessing satellite images and classifying them simultaneously.
+
+## Bayes Upper Bound Error
+
+The present model extracts features from satellite images, which tend to be noisy and even for humans often not easily identifiable. Prior research has shown that certain pre-trained CNN structures can reach up to 90-98% on comparable data sets involving satellite imagery, like UCmerced (Kadhim & Abed, 2019). To provide a human baseline, the authors tried to classify the images from the given data set and achieved an average accuracy of about 60-70%.
